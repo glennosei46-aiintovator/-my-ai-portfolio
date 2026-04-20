@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glenn AI Assistant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #020617;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: #0f172a;
+}
+
+#chat {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.user {
+    text-align: right;
+    color: #818cf8;
+}
+
+.bot {
+    text-align: left;
+    color: #22c55e;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: none;
+}
+
+button {
+    padding: 12px;
+    background: #6366f1;
+    border: none;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🤖 Glenn AI Study Assistant</h2>
+</header>
+
+<div id="chat"></div>
+
+<div style="display:flex;">
+    <input id="input" placeholder="Ask me anything...">
+    <button onclick="send()">Send</button>
+</div>
+
+<script>
+function send() {
+    let input = document.getElementById("input");
+    let chat = document.getElementById("chat");
+
+    let userText = input.value;
+
+    if (userText === "") return;
+
+    chat.innerHTML += `<div class="message user">${userText}</div>`;
+
+    // Fake AI response (for now)
+    let response = "I'm Glenn AI 🤖. I'm still learning, but I will soon help students study smarter!";
+
+    chat.innerHTML += `<div class="message bot">${response}</div>`;
+
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
