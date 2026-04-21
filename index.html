@@ -13,6 +13,7 @@ body {
     color: white;
 }
 
+/* Glow effect */
 h1, h2 {
     text-shadow: 0 0 15px rgba(99,102,241,0.8);
 }
@@ -80,6 +81,14 @@ footer {
     padding: 40px;
     color: #64748b;
 }
+
+/* Contact box */
+.contact-box {
+    background: rgba(15, 23, 42, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(99,102,241,0.2);
+}
 </style>
 </head>
 
@@ -88,22 +97,24 @@ footer {
 <header>
     <h1>🚀 Building the Future with AI & Robotics</h1>
     <p>Glenn Wesley Offei Osei — 17-year-old innovator from Ghana</p>
-    <button>View Vision</button>
-    <button>Contact Me</button>
+
+    <!-- FIXED BUTTONS -->
+    <button onclick="document.getElementById('vision').scrollIntoView({behavior:'smooth'})">View Vision</button>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
 </header>
 
 <section>
     <h2>About Me</h2>
     <p>
-        I am a student at Bishop Herman College in Kpando, Ghana, passionate about STEM, AI, and robotics. 
-        My goal is to build technology that transforms everyday life and education.
+        I am a student at Bishop Herman College with a strong passion for AI, robotics, and innovation.
+        I am building toward creating technology that transforms everyday life and education.
     </p>
 </section>
 
-<section>
+<section id="vision">
     <h2>My Vision</h2>
     <p>
-        To build a global AI and robotics company that creates humanoid robots, intelligent systems, 
+        To build a global AI and robotics company that creates humanoid robots, intelligent systems,
         and powerful apps that make life easier, faster, and smarter.
     </p>
 </section>
@@ -121,7 +132,7 @@ footer {
         </div>
         <div class="card">
             <h3>📱 Apps</h3>
-            <p>Simple applications that improve daily life.</p>
+            <p>Simple apps that improve everyday life.</p>
         </div>
     </div>
 </section>
@@ -129,40 +140,37 @@ footer {
 <section>
     <h2>The Problem</h2>
     <p>
-        Many people lack access to advanced technology and quality education tools, limiting growth and opportunity.
+        Access to advanced technology and quality education is still limited for many people,
+        especially in developing regions.
     </p>
 </section>
 
 <section>
     <h2>My Solution</h2>
     <p>
-        I aim to build affordable AI systems, robotics, and apps that improve learning, productivity, and access to technology.
+        I aim to build affordable AI tools, robotics systems, and applications that improve
+        learning, productivity, and accessibility.
     </p>
-</section>
-
-<section>
-    <h2>My First AI Project</h2>
-    <p>
-        I built a simple AI study assistant called Glenn AI to help students learn better using technology.
-    </p>
-
-    <a href="ai.html">
-        <button>🚀 Try Glenn AI</button>
-    </a>
 </section>
 
 <section>
     <h2>Long-Term Goal</h2>
     <p>
-        To build a global tech company that competes with the best and represents African innovation worldwide.
+        To create a global tech company that represents innovation from Africa and competes
+        at the highest level.
     </p>
 </section>
 
-<section>
-    <h2>Let’s Work Together</h2>
-    <p>
-        I am looking for mentors, investors, and collaborators to help turn this vision into reality.
-    </p>
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="contact-box">
+        <p><strong>Email:</strong> glennosei46@gmail.com</p>
+        <p><strong>Phone 1:</strong> +233548663330</p>
+        <p><strong>Phone 2 </strong> +233202916443</p>
+        <p>If you want to collaborate, invest, or mentor me, reach out anytime.</p>
+    </div>
 </section>
 
 <footer>
