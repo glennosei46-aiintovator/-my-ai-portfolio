@@ -1,47 +1,60 @@
+ai. HTML 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glenn Osei | AI Innovator</title>
+<title>Glenn AI Assistant</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0f19;
+    font-family: Arial;
+    background: #020617;
     color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 header {
+    padding: 20px;
     text-align: center;
-    padding: 80px 20px;
+    background: #0f172a;
 }
 
-h1 {
-    font-size: 2.5em;
+#chat {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-section {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
+.message {
+    margin: 10px 0;
+}
+
+.user {
+    text-align: right;
+    color: #818cf8;
+}
+
+.bot {
+    text-align: left;
+    color: #22c55e;
+}
+
+input {
+    width: 80%;
+    padding: 12px;
+    border: none;
 }
 
 button {
-    padding: 12px 20px;
-    background: #4f46e5;
+    padding: 12px;
+    background: #6366f1;
     border: none;
     color: white;
-    cursor: pointer;
-    border-radius: 6px;
-}
-
-.card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
 }
 </style>
 </head>
@@ -49,42 +62,36 @@ button {
 <body>
 
 <header>
-    <h1>🚀 Glenn Wesley Offei Osei</h1>
-    <p>Future AI & Robotics Innovator</p>
+    <h2>🤖 Glenn AI Study Assistant</h2>
 </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        I am a student from Ghana passionate about AI, robotics, and building technology 
-        that improves everyday life.
-    </p>
-</section>
+<div id="chat"></div>
 
-<section>
-    <h2>My Vision</h2>
-    <p>
-        To build a global AI and robotics company that creates intelligent systems, 
-        humanoid robots, and powerful applications.
-    </p>
-</section>
+<div style="display:flex;">
+    <input id="input" placeholder="Ask me anything...">
+    <button onclick="send()">Send</button>
+</div>
 
-<section>
-    <h2>My AI Project</h2>
+<script>
+function send() {
+    let input = document.getElementById("input");
+    let chat = document.getElementById("chat");
 
-    <div class="card">
-        <h3>🤖 Glenn AI</h3>
-        <p>A ChatGPT-style AI assistant built by me.</p>
+    let userText = input.value;
 
-        <a href="ai.html">
-            <button>🚀 Open Glenn AI</button>
-        </a>
-    </div>
-</section>
+    if (userText === "") return;
 
-<footer style="text-align:center;padding:30px;color:#777;">
-    © 2026 Glenn Osei
-</footer>
+    chat.innerHTML += `<div class="message user">${userText}</div>`;
+
+    // Fake AI response (for now)
+    let response = "I'm Glenn AI 🤖. I'm still learning, but I will soon help students study smarter!";
+
+    chat.innerHTML += `<div class="message bot">${response}</div>`;
+
+    input.value = "";
+    chat.scrollTop = chat.scrollHeight;
+}
+</script>
 
 </body>
 </html>
